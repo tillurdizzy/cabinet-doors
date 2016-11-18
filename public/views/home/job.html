@@ -1,0 +1,16 @@
+<div>
+    <table st-table="Ctrl.ACTIVE_JOBS" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th style="width:40px;">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in Ctrl.ACTIVE_JOBS">
+                <td>{{row.property}}</td>
+                <td><i class="fa fa-pencil" ng-click="Ctrl.editRowItem(row)" style="cursor:pointer;"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

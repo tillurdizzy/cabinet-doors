@@ -1,0 +1,53 @@
+<div>
+    <div class="input-form">
+        <div class="form-item">
+            <div class="item-name">
+                <h3>Room</h3></div>
+            <div class="item-select">
+                <md-select ng-model="Ctrl.FORM.room" placeholder="select">
+                    <md-option ng-value="opt" ng-repeat="opt in Ctrl.L.roomSelections">{{ opt }}</md-option>
+                </md-select>
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="item-name">
+                <h3>Hinges</h3></div>
+            <div class="item-select">
+                <md-select ng-model="Ctrl.FORM.hinges" placeholder="select">
+                    <md-option ng-value="opt" ng-repeat="opt in Ctrl.L.leftRight">{{ opt }}</md-option>
+                </md-select>
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="item-name">
+                <h3>Pull</h3></div>
+            <div class="item-select">
+                <md-select ng-model="Ctrl.FORM.pull" placeholder="select">
+                    <md-option ng-value="opt" ng-repeat="opt in Ctrl.L.yesNo">{{ opt }}</md-option>
+                </md-select>
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="item-name">
+                <h3>Height</h3></div>
+            <div class="item-input">
+                <input type="tel" ng-model="Ctrl.FORM.height">
+            </div>
+            <div class="item-unit">
+                <h3>in.</h3></div>
+        </div>
+        <div class="form-item">
+            <div class="item-name">
+                <h3>Width</h3></div>
+            <div class="item-input">
+                <input type="tel" ng-model="Ctrl.FORM.width">
+            </div>
+            <div class="item-unit">
+                <h3>In.</h3></div>
+        </div>
+        <div class="form-button">
+            <md-button class="md-raised btn" ng-class="md-primary" ng-click="Ctrl.saveDoor();"> Save Door </md-button>
+            <md-button class="md-raised btn" ng-class="md-primary" ng-click="Ctrl.goNav('home.review');"> REVIEW </md-button>
+        </div>
+    </div>
+</div>

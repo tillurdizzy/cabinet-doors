@@ -1,0 +1,30 @@
+$side-nav-width:200px;
+$button-width:196px;
+
+.side-nav {
+    width: $side-nav-width;
+    min-height: 1500px;
+    background-color: #dddddd;
+
+    .btn {
+        width: $button-width;
+        margin: 1px 2px;
+    }
+
+    .section-label {
+        cursor:pointer;
+        background-color: #CCCCCC;
+        height: 36px;
+        width: $side-nav-width;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        h4 {
+            line-height: 1;
+            font-size: 1rem;
+            padding: 0;
+            margin: 0;
+            font-weight: 600;
+        }
+    }
+}

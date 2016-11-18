@@ -1,0 +1,200 @@
+body {
+    font-family: 'Jaldi', sans-serif;
+}
+
+.view-container {
+    padding-top: 1px;
+}
+
+.view-content {
+    margin: 0 auto;
+    padding: 0 2%;
+    .page-title {
+        width: 100%;
+        margin: .5rem 0;
+        background-color: $belizeHole-blue;
+        h4 {
+            width: 100%;
+            font-size: 1rem;
+            font-weight: 600;
+            display: inline-block;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    }
+    .sub-title {
+        width: 100%;
+        margin: .5rem 0;
+        background-color: $sea-green;
+        h4 {
+            width: 100%;
+            font-size: 1rem;
+            font-weight: 600;
+            display: inline-block;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    }
+    h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        display: inline-block;
+        color: #000000;
+        text-align: left;
+    }
+    .section-heading {
+        width: 100%;
+        display: inline-block;
+        height: 24px;
+        background-color: $belizeHole-blue;
+        margin-top: 2rem;
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            display: inline-block;
+            color: #FFF;
+            text-align: left;
+            padding-left: 5px;
+        }
+    }
+    .section-content {
+        margin-left: 6px;
+        p {
+            line-height: 1;
+            margin: 0;
+        }
+    }
+    .section-sub-heading {
+        margin: 6px 0;
+        h4 {
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            color: #000;
+            text-align: left;
+        }
+    }
+}
+
+.home-menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    button {
+        margin: 2px 0;
+    }
+}
+
+
+
+.header-light {
+    background: $wetAsphalt;
+    color:$sunFlower-yellow;
+    display: flex;
+    min-width: 100%;
+    margin: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 40px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.header-bars {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    align-content: center;
+    i {
+        color: $clouds-grey;
+    }
+}
+
+.header-center-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    h5 {
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        line-height: 16px;
+        color: $sunFlower-yellow;
+    }
+}
+
+.header-right-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    h6 {
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+        line-height: 24px;
+    }
+}
+
+.block-section {
+    background-color: $clouds-grey;
+    padding: 1.5rem 2rem;
+    border: 2px solid $silver-grey;
+    display: inline-block;
+}
+
+//////////////////////////////FlexBox
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+}
+
+// This will center a single item in a div
+.centered-item {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.flex-row-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    div {
+        margin-right: 1rem;
+    }
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-space-between {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hrule {
+    border-top: 2px solid #000000;
+    width: 100%;
+    clear: both;
+    content: '';
+    display: block;
+}

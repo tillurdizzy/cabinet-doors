@@ -1,0 +1,14 @@
+<div ng-controller="HomeCtrl as Ctrl">
+    <div class="page-title">
+        <h4>{{Ctrl.navLocation}}</h4></div>
+    <horiz-rule marginbottom="10"></horiz-rule>
+    <div class="sub-title">
+            <h4>{{Ctrl.S.selectedJob.property}} / Unit #{{Ctrl.FORM.unit}}</h4></div>
+    <div ui-view>
+        <div class="home-menu">
+            <md-button class="md-raised btn" ng-class="md-primary" ng-click="Ctrl.goNav('home.job')"> Select Property </md-button>
+            <md-button class="md-raised btn" ng-class="md-primary" ng-click="Ctrl.goNav('home.unit')"> Select Unit </md-button>
+            <md-button class="md-raised btn" ng-class="md-primary" ng-click="Ctrl.goNav('home.input')"> Input Doors FORM</md-button>
+        </div>
+    </div>
+</div>

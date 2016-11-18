@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Cabinet Door Manager</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
+    <meta http-equiv="pragma" content="no-cache">
+   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Jaldi:400,700' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/app.css?v=5" />
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body ng-app="app" ng-cloak>
+    <div class="view-container" ng-controller="NavCtrl as Ctrl">
+        <div class="header-light noprint" role="banner">
+            <div class="header-bars"><i ng-click="Ctrl.goNav('home');" class="fa fa-home fa-lg"></i></div>
+            <div class="header-center-text"><h5>Cabinet Door Manager</h5></div>
+            <div></div>
+        </div>
+        <div class="view-content">
+            <div ui-view>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="bundle.js?v=2"></script>
+    <script src="myApp.js?v=3"></script>
+    <!--Global Services-->
+    <script src="js/data.srvc.js?v=3"></script>
+    <script src="js/shared.srvc.js?v=3"></script>
+    <script src="js/list.srvc.js?v=3"></script>
+    <script src="js/tabbedMenu.ctrl.js?v=3"></script>
+    <script src="js/nav.ctrl.js?v=2"></script>
+    <!--Directives-->
+    <script src="js/directives/hrule.dir.js?v=2"></script>
+    <script src="js/directives/space.dir.js?v=2"></script>
+    
+    
+    <!--Modules-->
+    <!--Controllers-->
+    <script src="views/home/home.ctrl.js?v=2"></script>
+   
+    
+</body>
+
+</html>
