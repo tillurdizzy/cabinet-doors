@@ -11,43 +11,72 @@
         </div>
         <div class="form-item">
             <div class="item-name">
+                <h3>Height</h3></div>
+            <div ng-class="Ctrl.editActiveH ? 'item-icon-active' : 'item-icon'">
+                <i ng-click="Ctrl.editH();" class="fa fa-pencil fa-lg"></i></div>
+            <div class="item-input">
+                <h3>{{Ctrl.FORM.height}}</h3>
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="item-name">
+                <h3>Width</h3></div>
+            <div ng-class="Ctrl.editActiveW ? 'item-icon-active' : 'item-icon'">
+                <i ng-click="Ctrl.editW();" class="fa fa-pencil fa-lg"></i></div>
+            <div class="item-input">
+                <h3>{{Ctrl.FORM.width}}</h3>
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="item-name">
                 <h3>Hinges</h3></div>
-            <div class="item-select">
-                <md-select ng-model="Ctrl.FORM.hinges" placeholder="select">
-                    <md-option ng-value="opt" ng-repeat="opt in Ctrl.L.leftRight">{{ opt }}</md-option>
-                </md-select>
+            <div class="item-radio">
+                <md-radio-group ng-model="Ctrl.FORM.hinges">
+                    <div class="flex-row">
+                        <md-radio-button value="Left"> Left </md-radio-button>
+                        <md-radio-button value="Right"> Right </md-radio-button>
+                    </div>
+                </md-radio-group>
             </div>
         </div>
         <div class="form-item">
             <div class="item-name">
                 <h3>Pull</h3></div>
-            <div class="item-select">
-                <md-select ng-model="Ctrl.FORM.pull" placeholder="select">
-                    <md-option ng-value="opt" ng-repeat="opt in Ctrl.L.yesNo">{{ opt }}</md-option>
-                </md-select>
+            <div class="item-radio">
+                <md-radio-group ng-model="Ctrl.FORM.pull">
+                    <div class="flex-row">
+                        <md-radio-button value="Yes"> Yes </md-radio-button>
+                        <md-radio-button value="No"> No </md-radio-button>
+                    </div>
+                </md-radio-group>
             </div>
         </div>
-        <div class="form-item">
-            <div class="item-name">
-                <h3>Height</h3></div>
-            <div class="item-input">
-                <input type="tel" ng-model="Ctrl.FORM.height">
+        
+        <div class="flex-column" ng-show="Ctrl.showKeyboard">
+            <div class="numPadRow">
+                <div class="num-btn" ng-click="Ctrl.numpad('1')">1</div>
+                <div class="num-btn middle-btn" ng-click="Ctrl.numpad('2')">2</div>
+                <div class="num-btn" ng-click="Ctrl.numpad('3')">3</div>
             </div>
-            <div class="item-unit">
-                <h3>in.</h3></div>
-        </div>
-        <div class="form-item">
-            <div class="item-name">
-                <h3>Width</h3></div>
-            <div class="item-input">
-                <input type="tel" ng-model="Ctrl.FORM.width">
+            <div class="numPadRow">
+                <div class="num-btn" ng-click="Ctrl.numpad('4')">4</div>
+                <div class="num-btn middle-btn" ng-click="Ctrl.numpad('5')">5</div>
+                <div class="num-btn" ng-click="Ctrl.numpad('6')">6</div>
             </div>
-            <div class="item-unit">
-                <h3>In.</h3></div>
+            <div class="numPadRow">
+                <div class="num-btn" ng-click="Ctrl.numpad('7')">7</div>
+                <div class="num-btn middle-btn" ng-click="Ctrl.numpad('8')">8</div>
+                <div class="num-btn" ng-click="Ctrl.numpad('9')">9</div>
+            </div>
+            <div class="numPadRow">
+                <div class="num-btn" ng-click="Ctrl.numpad('.')">.</div>
+                <div class="num-btn middle-btn" ng-click="Ctrl.numpad('0')">0</div>
+                <div class="num-btn" ng-click="Ctrl.numpad('-')">&laquo;</div>
+            </div>
         </div>
-        <div class="form-button">
-            <md-button class="md-raised btn" ng-class="md-primary" ng-click="Ctrl.saveDoor();"> Save Door </md-button>
-            <md-button class="md-raised btn" ng-class="md-primary" ng-click="Ctrl.goNav('home.review');"> REVIEW </md-button>
+        <div class="flex-space-between">
+            <md-button class="md-raised menuBtn" ng-class="md-primary" ng-click="Ctrl.saveDoor();"> Save </md-button>
+            <md-button class="md-raised menuBtn" ng-class="md-primary" ng-click="Ctrl.goNav('home.review');"> REVIEW </md-button>
         </div>
     </div>
 </div>

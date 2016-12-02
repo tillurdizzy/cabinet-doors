@@ -520,6 +520,36 @@ body {
   border: 2px solid #BDC3C7;
   display: inline-block; }
 
+.component-table-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: #ECF0F1;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.26);
+  margin-bottom: 3px;
+  cursor: pointer; }
+  .component-table-row h4 {
+    color: #2C3E50;
+    font-size: 18px; }
+
+.home-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: #ECF0F1;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.26);
+  margin-bottom: 5px;
+  cursor: pointer; }
+  .home-btn h4 {
+    color: #2C3E50;
+    font-size: 20px; }
+
 .flex-column {
   display: flex;
   flex-direction: column; }
@@ -606,6 +636,11 @@ table {
 .table-icon-btn {
   cursor: pointer; }
 
+.menuBtn {
+  min-height: 48px;
+  font-size: 22px;
+  font-weight: 600; }
+
 .side-nav {
   width: 200px;
   min-height: 1500px;
@@ -636,13 +671,13 @@ table {
   .input-form .form-item {
     display: flex;
     margin: 0 0 5px 0;
-    height: 30px; }
+    height: 36px; }
     .input-form .form-item md-select {
       margin: 0 5px;
       min-width: 150px; }
   .input-form .item-name {
     height: 30px;
-    width: 150px;
+    width: 100px;
     background-color: #34495E;
     color: #fff;
     margin: 0 0 0 5px;
@@ -665,6 +700,18 @@ table {
       display: block;
       text-align: left;
       font-size: 18px; }
+  .input-form .item-icon {
+    height: 30px;
+    width: 40px;
+    color: #2ECC71;
+    margin-left: 5px;
+    display: inline; }
+  .input-form .item-icon-active {
+    height: 30px;
+    width: 40px;
+    color: #E74C3C;
+    margin-left: 5px;
+    display: inline; }
   .input-form .item-unit {
     height: 30px;
     width: 40px;
@@ -673,12 +720,32 @@ table {
     display: inline; }
     .input-form .item-unit h3 {
       font-size: 16px; }
-  .input-form .form-button {
-    margin: 0 0 5px 0;
-    width: 300px; }
-    .input-form .form-button .btn {
-      margin: 5px 0;
-      width: 300px; }
+  .input-form .item-radio {
+    height: 30px;
+    color: #BDC3C7;
+    margin-left: 5px;
+    display: inline; }
+    .input-form .item-radio md-radio-button .md-label {
+      margin-right: 8px;
+      margin-left: 22px; }
+
+.numPadRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px; }
+  .numPadRow .num-btn {
+    flex: 1;
+    background-color: #ECF0F1;
+    height: 30px;
+    border: 1px solid #000000;
+    color: #000000;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer; }
+    .numPadRow .num-btn .middle-btn {
+      margin-right: 2px;
+      margin-left: 2px; }
 
 .red-alert-small {
   font-size: .8rem;

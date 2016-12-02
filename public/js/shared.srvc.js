@@ -1,16 +1,18 @@
 'use strict';
 angular.module('app').factory('SharedSrvc', SharedSrvc);
 
-SharedSrvc.$inject = ['$rootScope', 'DB'];
+SharedSrvc.$inject = ['$rootScope', 'DB','$mdDialog'];
 
-function SharedSrvc($rootScope, DB) {
+function SharedSrvc($rootScope, DB, $mdDialog) {
     var self = this;
     var alertMD;
     var traceMe = true;
     var myID = "SharedSrvc: ";
+    self.activeUnit = "";
 
     self.selectedJob = { PRIMARY_ID: 0, property: "No Property Selected", address: "" };
     var ACTIVE = [];
+    var DOORS = [];
 
     self.initSrvc = function() {
 
@@ -20,9 +22,14 @@ function SharedSrvc($rootScope, DB) {
         self.selectedJob = obj;
     };
 
+    self.setUnit = function(str) {
+        self.activeUnit = str;
+    };
+
     self.resetJob = function() {
         self.selectedJob = { PRIMARY_ID: 0, property: "No Property Selected", address: "" };
-    }
+        self.activeUnit = "";
+    };
 
     self.saveDoor = function(doorVO) {
         if (self.selectedJob.PRIMARY_ID == 0) {
@@ -44,7 +51,9 @@ function SharedSrvc($rootScope, DB) {
             if (resultObj.result == "Error" || typeof resultObj.data === "string") {
                 alert("Query Error - see console for details");
                 console.log("saveDoor ---- " + resultObj.data);
-            } else {}
+            } else {
+                alert(resultObj.result);
+            }
         }, function(error) {
             alert("Query Error - SharedCtrl >> saveDoor");
         });
@@ -66,9 +75,31 @@ function SharedSrvc($rootScope, DB) {
         });
     };
 
+    self.getUnitDoors = function(){
+        var dataObj = {};
+        dataObj.property = self.selectedJob.PRIMARY_ID;
+        dataObj.unit = self.activeUnit;
+
+        DB.query('getUnitDoors',dataObj).then(function(resultObj) {
+            if (resultObj.result == "Error" || typeof resultObj.data === "string") {
+                alert("Query Error - see console for details");
+                console.log("getUnitDoors ---- " + resultObj.data);
+            } else {
+                DOORS = resultObj.data;
+                $rootScope.$broadcast('onRefreshUnitDoors');
+            }
+        }, function(error) {
+            alert("Query Error - SharedCtrl >> getActiveJobs");
+        });
+    };
+
 
     self.returnActiveJobs = function() {
         return ACTIVE;
+    };
+
+    self.returnDoors = function() {
+        return DOORS;
     };
 
     self.validateSelectedJob = function() {
@@ -90,7 +121,7 @@ function SharedSrvc($rootScope, DB) {
         }
     };
 
-    function clone(obj) {
+    self.clone = function(obj) {
         var copy;
         if (null == obj || "object" != typeof obj) return obj;
         if (obj instanceof Date) {

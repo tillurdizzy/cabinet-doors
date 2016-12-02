@@ -13,7 +13,7 @@
         <tbody>
             <tr ng-repeat="row in Ctrl.UNIT_DOORS">
                 <td>{{row.room}}</td>
-                <td>{{row.hinge}}</td>
+                <td>{{row.hinges}}</td>
                 <td>{{row.pull}}</td>
                 <td>{{row.height}}</td>
                 <td>{{row.width}}</td>
@@ -21,5 +21,5 @@
             </tr>
         </tbody>
     </table>
-    <md-button class="md-raised btn" ng-class="md-primary" ng-click="Ctrl.goNav('home.input');"> BACK </md-button>
+    <md-button class="md-raised menuBtn" ng-class="md-primary" ng-click="Ctrl.goNav('home.input');"> BACK </md-button>
 </div>

@@ -9,28 +9,30 @@ function myFunction($scope, SharedSrvc, $state, ListSrvc, $mdDialog) {
     var alert;
     var ME = "HomeCtrl: ";
     vm.L = ListSrvc;
-    vm.FORM = { unit: "#", room: "", width: "", height: "", hinges: "", pull: "" };
-    vm.unitInput = "";
+    vm.FORM = { unit: "#", room: "", width: "0", height: "0", hinges: "", pull: "" };
+    vm.unitInput = "0";
 
     vm.navLocation = "Home";
     vm.ACTIVE_JOBS = [];
     vm.UNIT_DOORS = [];
     vm.JobID = 0;
+    vm.showKeyboard = false;
+    vm.editActiveH = false;
+    vm.editActiveW = false;
+    vm.editActiveUnit = false;
 
+    vm.MATERIALS = [{item:"item 1",qty:15},{item:"item 2",qty:15}];
 
     vm.goNav = function(st) {
+    	trace('goNav');
         switch (st) {
-            case "home":
-                vm.navLocation = "Home";
-                break;
-            case "home.job":
-                vm.navLocation = "Select Property";
-                break;
+            case "home":break;
+            case "home.job":break;
             case "home.unit":
-                vm.navLocation = "Select Unit";
+                vm.editActiveUnit = true;
                 break;
             case "home.review":
-                vm.navLocation = "Unit Review";
+                getUnitDoors();
                 break;
             case "home.input":
                 var jobStatus = vm.S.validateSelectedJob();
@@ -53,15 +55,25 @@ function myFunction($scope, SharedSrvc, $state, ListSrvc, $mdDialog) {
     };
 
     vm.saveDoor = function() {
+    	trace('saveDoor');
     	var v = validateForm();
         if (v) {
-            vm.S.saveDoor(vm.FORM);
-            vm.UNIT_DOORS.push(vm.FORM);
-            vm.FORM.width = "";
-            vm.FORM.height = "";
+        	var dataObj = vm.S.clone(vm.FORM);
+            vm.S.saveDoor(dataObj);
+            vm.UNIT_DOORS.push(dataObj);
+            vm.FORM.width = "0";
+            vm.FORM.height = "0";
             vm.FORM.hinges = "";
             vm.FORM.pull = "";
+
+            vm.editActiveW = false
+    		vm.editActiveH = false;
+    		vm.showKeyboard = false;
         }
+    };
+
+    function getUnitDoors(){
+    	vm.S.getUnitDoors();
     };
 
     function validateForm() {
@@ -93,19 +105,82 @@ function myFunction($scope, SharedSrvc, $state, ListSrvc, $mdDialog) {
         });
     };
 
+    vm.editH = function(){
+    	trace('editH');
+    	if(vm.editActiveH == true){
+    		vm.editActiveH = false;
+    		vm.showKeyboard = false;
+    	}else{
+    		vm.editActiveH = true
+    		vm.editActiveW = false;
+    		vm.showKeyboard = true;
+    	}
+    };
+
+    vm.editW = function(){
+    	trace('editW');
+    	if(vm.editActiveW == true){
+    		vm.editActiveW = false;
+    		vm.showKeyboard = false;
+    	}else{
+    		vm.editActiveW = true
+    		vm.editActiveH = false;
+    		vm.showKeyboard = true;
+    	}
+    };
+
+    vm.numpad = function(k){
+    	var key = k;
+    	var input = "";
+    	// Determine working item
+    	if(vm.editActiveW){
+    		input = vm.FORM.width;
+    	}else if(vm.editActiveH){
+    		input = vm.FORM.height;
+    	}else if(vm.editActiveUnit){
+    		input = vm.unitInput;
+    	}
+    	// Parse key
+    	if(input == "0"){
+    		input = "";
+    	}
+
+    	if(key == "-"){
+    		var n = input.length;
+    		input = input.slice(0,n-1);
+    	}else{
+    		input+=key;
+    	}
+    	// Assign key to item
+    	if(vm.editActiveW){
+    		vm.FORM.width = input;
+    	}else if(vm.editActiveH){
+    		vm.FORM.height = input;
+    	}else if(vm.editActiveUnit){
+    		vm.unitInput = input;
+    	}
+    };
+
     // Used for Property selection
     vm.editRowItem = function(row) {
         vm.JobID = row.id;
         vm.S.setSelectedJob(row);
         $state.transitionTo('home');
-        vm.navLocation = "Home";
+       
+    };
+
+     // Used for Property selection
+    vm.editDoor = function(row) {
+       vm.FORM = row;
+       $state.transitionTo('home.input');
     };
 
     vm.selectUnit = function() {
         vm.FORM.unit = vm.unitInput;
+        vm.S.setUnit(vm.FORM.unit);
+        vm.editActiveUnit = false;
         $state.transitionTo('home');
-        vm.navLocation = "Home";
-        vm.unitInput = "";
+        vm.unitInput = "0";
     };
 
 
@@ -113,14 +188,13 @@ function myFunction($scope, SharedSrvc, $state, ListSrvc, $mdDialog) {
         vm.S.resetJob();
         resetInput();
         $state.transitionTo('home');
-        vm.navLocation = "Home";
+       
     };
 
     function resetInput() {
-        vm.FORM = { unit: "#", room: "", width: "", height: "", hinges: "", pull: "" };
+        vm.FORM = { unit: "#", room: "", width: "0", height: "0", hinges: "", pull: "" };
         vm.UNIT_DOORS = [];
     };
-
 
     function trace(msg) {
         if (traceMe == true) {
@@ -139,7 +213,10 @@ function myFunction($scope, SharedSrvc, $state, ListSrvc, $mdDialog) {
         vm.ACTIVE_JOBS = vm.S.returnActiveJobs();
     });
 
-
+    $scope.$on('onRefreshUnitDoors', function() {
+        trace('onRefreshUnitDoors');
+        vm.UNIT_DOORS = vm.S.returnDoors();
+    });
 
 
 };

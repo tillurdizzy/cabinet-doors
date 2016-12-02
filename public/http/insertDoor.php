@@ -3,10 +3,10 @@ ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 $input = json_decode(file_get_contents("php://input"));
 
-define( "DATABASE_SERVER", "evoflatroof.db.10253438.hostedresource.com");
-define( "DATABASE_USERNAME", "evoflatroof");
+define( "DATABASE_SERVER", "flatroofjobs.db.10253438.hostedresource.com");
+define( "DATABASE_USERNAME", "flatroofjobs");
 define( "DATABASE_PASSWORD", "Sadie9954!");
-define( "DATABASE_NAME", "evoflatroof");
+define( "DATABASE_NAME", "flatroofjobs");
 
 $con = mysqli_connect(DATABASE_SERVER, DATABASE_USERNAME, DATABASE_PASSWORD,DATABASE_NAME) or die ('ERROR!!!');
 $unit = mysqli_real_escape_string($con,$input->unit);
@@ -15,7 +15,7 @@ $room = mysqli_real_escape_string($con,$input->room);
 $width = mysqli_real_escape_string($con,$input->width);
 $height = mysqli_real_escape_string($con,$input->height);
 $hinges = mysqli_real_escape_string($con,$input->hinges);
-$pull = mysqli_real_escape_string($con,$input->price);
+$pull = mysqli_real_escape_string($con,$input->pull);
 
 $query = sprintf("INSERT INTO doors (unit,property,room,width,height,hinges,pull) VALUES (
 '" . $unit . "', " .

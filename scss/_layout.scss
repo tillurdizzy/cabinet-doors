@@ -149,6 +149,40 @@ body {
     display: inline-block;
 }
 
+.component-table-row{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height:36px;
+    width:100%;
+    border-radius:3px;
+    background-color:$clouds-grey;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.26);
+    margin-bottom:3px;
+    cursor:pointer;
+    h4{
+        color:$midnight-blue;
+        font-size: 18px;
+    }
+}
+
+.home-btn{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height:40px;
+    width:100%;
+    border-radius:3px;
+    background-color:$clouds-grey;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.26);
+    margin-bottom:5px;
+    cursor:pointer;
+    h4{
+        color:$midnight-blue;
+        font-size: 20px;
+    }
+}
+
 //////////////////////////////FlexBox
 .flex-column {
     display: flex;

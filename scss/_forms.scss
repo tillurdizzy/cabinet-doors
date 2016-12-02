@@ -7,7 +7,7 @@ $input-line-height:30px;
     .form-item {
         display: flex;
         margin: 0 0 5px 0;
-        height: $input-line-height;
+        height: 36px;
         md-select {
             margin: 0 5px;
             min-width: 150px;
@@ -15,7 +15,7 @@ $input-line-height:30px;
     }
     .item-name {
         height: $input-line-height;
-        width: 150px;
+        width: 100px;
         background-color: $wetAsphalt;
         color: #fff;
         margin: 0 0 0 5px;
@@ -42,6 +42,20 @@ $input-line-height:30px;
             font-size: 18px;
         }
     }
+    .item-icon {
+        height: $input-line-height;
+        width: 40px;
+        color: $emerald-green;
+        margin-left: 5px;
+        display: inline;
+    }
+    .item-icon-active {
+        height: $input-line-height;
+        width: 40px;
+        color: $tertiary-color;
+        margin-left: 5px;
+        display: inline;
+    }
     .item-unit {
         height: $input-line-height;
         width: 40px;
@@ -52,12 +66,40 @@ $input-line-height:30px;
             font-size: 16px;
         }
     }
-    .form-button {
-        margin: 0 0 5px 0;
-        width:300px;
-        .btn {
-            margin: 5px 0;
-            width: 300px;
+    .item-radio {
+        height: $input-line-height;
+        color: $silver-grey;
+        margin-left: 5px;
+        display: inline;
+        md-radio-button {
+            .md-label {
+                margin-right: 8px;
+                margin-left: 22px;
+            }
+        }
+    } 
+}
+
+.numPadRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+    .num-btn{
+        flex: 1;
+        background-color:$clouds-grey;
+        height: 30px;
+        border:1px solid #000000;
+        color:#000000;
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+        cursor:pointer;
+
+        .middle-btn{
+            margin-right:2px;
+            margin-left:2px;
         }
     }
+   
 }
+
