@@ -37,6 +37,11 @@ function initRouter($stateProvider, $urlRouterProvider) {
             templateUrl: "views/home/review.html"
         })
 
+        .state('home.price', {
+            url: "/price",
+            templateUrl: "views/home/pricing.html"
+        })
+
 };
 
 mdTheme.$inject = ['$mdThemingProvider'];

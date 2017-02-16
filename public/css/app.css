@@ -541,6 +541,7 @@ body {
   align-items: center;
   height: 40px;
   width: 100%;
+  min-width: 100px;
   border-radius: 3px;
   background-color: #ECF0F1;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.26);
@@ -671,7 +672,7 @@ table {
   .input-form .form-item {
     display: flex;
     margin: 0 0 5px 0;
-    height: 36px; }
+    height: 40px; }
     .input-form .form-item md-select {
       margin: 0 5px;
       min-width: 150px; }
@@ -703,13 +704,13 @@ table {
   .input-form .item-icon {
     height: 30px;
     width: 40px;
-    color: #2ECC71;
+    color: #BDC3C7;
     margin-left: 5px;
     display: inline; }
   .input-form .item-icon-active {
     height: 30px;
     width: 40px;
-    color: #E74C3C;
+    color: #2ECC71;
     margin-left: 5px;
     display: inline; }
   .input-form .item-unit {
@@ -736,16 +737,17 @@ table {
   .numPadRow .num-btn {
     flex: 1;
     background-color: #ECF0F1;
-    height: 30px;
+    height: 50px;
     border: 1px solid #000000;
-    color: #000000;
+    color: #2C3E50;
     font-weight: 600;
     font-size: 18px;
     text-align: center;
-    cursor: pointer; }
-    .numPadRow .num-btn .middle-btn {
-      margin-right: 2px;
-      margin-left: 2px; }
+    cursor: pointer;
+    border-radius: 2px; }
+  .numPadRow .middle-btn {
+    margin-right: 2px;
+    margin-left: 2px; }
 
 .red-alert-small {
   font-size: .8rem;

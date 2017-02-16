@@ -7,7 +7,7 @@ $input-line-height:30px;
     .form-item {
         display: flex;
         margin: 0 0 5px 0;
-        height: 36px;
+        height: 40px;
         md-select {
             margin: 0 5px;
             min-width: 150px;
@@ -45,14 +45,14 @@ $input-line-height:30px;
     .item-icon {
         height: $input-line-height;
         width: 40px;
-        color: $emerald-green;
+        color: $silver-grey;
         margin-left: 5px;
         display: inline;
     }
     .item-icon-active {
         height: $input-line-height;
         width: 40px;
-        color: $tertiary-color;
+        color: $emerald-green;
         margin-left: 5px;
         display: inline;
     }
@@ -77,29 +77,27 @@ $input-line-height:30px;
                 margin-left: 22px;
             }
         }
-    } 
+    }
 }
 
 .numPadRow {
     display: flex;
     justify-content: space-between;
     margin-bottom: 3px;
-    .num-btn{
+    .num-btn {
         flex: 1;
-        background-color:$clouds-grey;
-        height: 30px;
-        border:1px solid #000000;
-        color:#000000;
+        background-color: $clouds-grey;
+        height: 50px;
+        border: 1px solid #000000;
+        color:$midnight-blue;
         font-weight: 600;
         font-size: 18px;
         text-align: center;
-        cursor:pointer;
-
-        .middle-btn{
-            margin-right:2px;
-            margin-left:2px;
-        }
+        cursor: pointer;
+        border-radius: 2px;
     }
-   
+    .middle-btn {
+        margin-right: 2px;
+        margin-left: 2px;
+    }
 }
-

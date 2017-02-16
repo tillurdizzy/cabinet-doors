@@ -12,6 +12,8 @@ function eventQueries($http, $q) {
     var queryPaths = {
         getActiveJobs: httpPathPrefix + "getActiveJobs.php",
         insertDoor: httpPathPrefix + "insertDoor.php",
+        deleteDoor: httpPathPrefix + "deleteDoor.php",
+        updateDoor: httpPathPrefix + "updateDoor.php",
         getUnitDoors: httpPathPrefix + "getUnitDoors.php"
     };
 

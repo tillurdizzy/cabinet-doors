@@ -1,0 +1,25 @@
+<div>
+    <h4>Count: {{Ctrl.S.unitTotals.doors}} / SqFt: {{Ctrl.S.unitTotals.sqft}} - {{Ctrl.S.unitTotals.total | currency:"$":2 }} / Pulls: {{Ctrl.S.unitTotals.pulls}} / Hinges: {{Ctrl.S.unitTotals.hinges}} </h4>
+    <table st-table="Ctrl.UNIT_DOORS" class="table table-striped">
+        <thead>
+            <tr>
+                <th>H</th>
+                <th>W</th>
+                <th>Pull</th>
+                <th>Hinges</th>
+                <th>Sq Ft</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in Ctrl.UNIT_DOORS">
+                <td>{{row.height}}</td>
+                <td>{{row.width}}</td>
+                <td>{{row.pull}}</td>
+                <td>{{row.hinges}}</td>
+                <td>{{row.sqFt}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <home-btn mylabel="'BACK'" ng-click="Ctrl.goNav('home');"></home-btn>
+</div>

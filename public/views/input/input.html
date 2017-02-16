@@ -1,56 +1,23 @@
 <div>
     <div class="input-form">
+        
         <div class="form-item">
-            <div class="item-name">
-                <h3>Room</h3></div>
-            <div class="item-select">
-                <md-select ng-model="Ctrl.FORM.room" placeholder="select">
-                    <md-option ng-value="opt" ng-repeat="opt in Ctrl.L.roomSelections">{{ opt }}</md-option>
-                </md-select>
-            </div>
-        </div>
-        <div class="form-item">
-            <div class="item-name">
-                <h3>Height</h3></div>
+            <div><home-btn mylabel="'Height'" ng-click="Ctrl.editH()"></home-btn></div>
             <div ng-class="Ctrl.editActiveH ? 'item-icon-active' : 'item-icon'">
-                <i ng-click="Ctrl.editH();" class="fa fa-pencil fa-lg"></i></div>
+                <i class="fa fa-pencil fa-lg"></i></div>
             <div class="item-input">
                 <h3>{{Ctrl.FORM.height}}</h3>
             </div>
         </div>
         <div class="form-item">
-            <div class="item-name">
-                <h3>Width</h3></div>
+            <div><home-btn mylabel="'Width'" ng-click="Ctrl.editW()"></home-btn></div>
             <div ng-class="Ctrl.editActiveW ? 'item-icon-active' : 'item-icon'">
-                <i ng-click="Ctrl.editW();" class="fa fa-pencil fa-lg"></i></div>
+                <i class="fa fa-pencil fa-lg"></i></div>
             <div class="item-input">
                 <h3>{{Ctrl.FORM.width}}</h3>
             </div>
         </div>
-        <div class="form-item">
-            <div class="item-name">
-                <h3>Hinges</h3></div>
-            <div class="item-radio">
-                <md-radio-group ng-model="Ctrl.FORM.hinges">
-                    <div class="flex-row">
-                        <md-radio-button value="Left"> Left </md-radio-button>
-                        <md-radio-button value="Right"> Right </md-radio-button>
-                    </div>
-                </md-radio-group>
-            </div>
-        </div>
-        <div class="form-item">
-            <div class="item-name">
-                <h3>Pull</h3></div>
-            <div class="item-radio">
-                <md-radio-group ng-model="Ctrl.FORM.pull">
-                    <div class="flex-row">
-                        <md-radio-button value="Yes"> Yes </md-radio-button>
-                        <md-radio-button value="No"> No </md-radio-button>
-                    </div>
-                </md-radio-group>
-            </div>
-        </div>
+        
         
         <div class="flex-column" ng-show="Ctrl.showKeyboard">
             <div class="numPadRow">
@@ -71,12 +38,19 @@
             <div class="numPadRow">
                 <div class="num-btn" ng-click="Ctrl.numpad('.')">.</div>
                 <div class="num-btn middle-btn" ng-click="Ctrl.numpad('0')">0</div>
-                <div class="num-btn" ng-click="Ctrl.numpad('-')">&laquo;</div>
+                <div class="num-btn" ng-click="Ctrl.numpad('-')">Back</div>
             </div>
         </div>
-        <div class="flex-space-between">
-            <md-button class="md-raised menuBtn" ng-class="md-primary" ng-click="Ctrl.saveDoor();"> Save </md-button>
-            <md-button class="md-raised menuBtn" ng-class="md-primary" ng-click="Ctrl.goNav('home.review');"> REVIEW </md-button>
+        <horiz-rule marginbottom="10"></horiz-rule>
+
+        <div class="flex-space-between" ng-show="Ctrl.submitType == 'insert'">
+            <home-btn mylabel="'SAVE'" ng-click="Ctrl.saveDoor()"></home-btn>
+            <home-btn mylabel="'REVIEW'" ng-click="Ctrl.goNav('home.review');"></home-btn>
+        </div>
+
+        <div class="flex-space-between" ng-show="Ctrl.submitType == 'update'">
+            <home-btn mylabel="'SAVE'" ng-click="Ctrl.saveDoor()"></home-btn>
+            <home-btn mylabel="'DELETE'" ng-click="Ctrl.deleteDoor();"></home-btn>
         </div>
     </div>
 </div>

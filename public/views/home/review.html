@@ -1,10 +1,9 @@
 <div>
+    <h3>Total: {{Ctrl.UNIT_DOORS.length}}</h3>
+
     <table st-table="Ctrl.UNIT_DOORS" class="table table-striped">
         <thead>
-            <tr>
-                <th>Room</th>
-                <th>Hinge</th>
-                <th>Pull</th>
+            <tr> 
                 <th>H</th>
                 <th>W</th>
                 <th style="width:40px;">Edit</th>
@@ -12,14 +11,13 @@
         </thead>
         <tbody>
             <tr ng-repeat="row in Ctrl.UNIT_DOORS">
-                <td>{{row.room}}</td>
-                <td>{{row.hinges}}</td>
-                <td>{{row.pull}}</td>
+                
                 <td>{{row.height}}</td>
                 <td>{{row.width}}</td>
                 <td><i class="fa fa-pencil" ng-click="Ctrl.editDoor(row)" style="cursor:pointer;"></i></td>
             </tr>
         </tbody>
     </table>
-    <md-button class="md-raised menuBtn" ng-class="md-primary" ng-click="Ctrl.goNav('home.input');"> BACK </md-button>
+    <home-btn mylabel="'BACK'" ng-click="Ctrl.goNav('home.input');"></home-btn>
+    
 </div>

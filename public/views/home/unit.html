@@ -2,37 +2,37 @@
     <div class="input-form">
         <div class="form-item">
             <div class="item-name">
-                <h3>Unit</h3></div>
+                <h3>Set Unit</h3></div>
         </div>
         <div class="form-item">
             <div class="item-input">
-                <h3>{{Ctrl.unitInput}}</h3>
+                <h3 style="color:#FF0000;">{{Ctrl.unitInput}}</h3>
             </div>
         </div>
         <div class="flex-column">
             <div class="numPadRow">
                 <div class="num-btn" ng-click="Ctrl.numpad('1')">1</div>
-                <div class="num-btn" ng-click="Ctrl.numpad('2')">2</div>
+                <div class="num-btn middle-btn" ng-click="Ctrl.numpad('2')">2</div>
                 <div class="num-btn" ng-click="Ctrl.numpad('3')">3</div>
             </div>
             <div class="numPadRow">
                 <div class="num-btn" ng-click="Ctrl.numpad('4')">4</div>
-                <div class="num-btn" ng-click="Ctrl.numpad('5')">5</div>
+                <div class="num-btn middle-btn" ng-click="Ctrl.numpad('5')">5</div>
                 <div class="num-btn" ng-click="Ctrl.numpad('6')">6</div>
             </div>
             <div class="numPadRow">
                 <div class="num-btn" ng-click="Ctrl.numpad('7')">7</div>
-                <div class="num-btn" ng-click="Ctrl.numpad('8')">8</div>
+                <div class="num-btn middle-btn" ng-click="Ctrl.numpad('8')">8</div>
                 <div class="num-btn" ng-click="Ctrl.numpad('9')">9</div>
             </div>
             <div class="numPadRow">
                 <div class="num-btn" ng-click="Ctrl.numpad('.')">.</div>
-                <div class="num-btn" ng-click="Ctrl.numpad('0')">0</div>
-                <div class="num-btn" ng-click="Ctrl.numpad('-')">&laquo;</div>
+                <div class="num-btn middle-btn" ng-click="Ctrl.numpad('0')">0</div>
+                <div class="num-btn" ng-click="Ctrl.numpad('-')">Back</div>
             </div>
         </div>
         <div class="form-item">
-           <md-button class="md-raised menuBtn" ng-class="md-primary" ng-click="Ctrl.selectUnit();"> SET </md-button>
+            <home-btn mylabel="'SET'" ng-click="Ctrl.selectUnit()"></home-btn>
         </div>
     </div>
 </div>

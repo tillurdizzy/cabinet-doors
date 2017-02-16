@@ -8,7 +8,8 @@
         <div class="home-menu">
             <home-btn mylabel="'PROPERTY'" ng-click="Ctrl.goNav('home.job')"></home-btn>
             <home-btn mylabel="'UNIT'" ng-click="Ctrl.goNav('home.unit')"></home-btn>
-            <home-btn mylabel="'DOORS'" ng-click="Ctrl.goNav('home.input')"></home-btn>
+            <home-btn mylabel="'INPUT'" ng-click="Ctrl.goNav('home.input')" ng-hide="Ctrl.menuEnabledFlags.disabled"></home-btn>
+            <home-btn mylabel="'REVIEW'" ng-click="Ctrl.goNav('home.price')" ng-hide="Ctrl.menuEnabledFlags.disabled"></home-btn>
         </div>
        
     </div>
